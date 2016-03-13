@@ -1,10 +1,10 @@
-<?/*@extends('layouts.user')
+<?/*
 
-@section('js')
+<?php $__env->startSection('js'); ?>
 <script src="../js/person_memories.min.js" type="text/javascript"></script>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 */?>
   <section class="intro-section center">       
     <p><strong><?php echo $buddy_data['buddy']->buddy_nickname; ?><br /></strong></p>        
@@ -34,4 +34,6 @@
    </section>  
 
 <?/*           
-@endsection*/?>
+<?php $__env->stopSection(); ?>*/?>
+
+<?php echo $__env->make('layouts.user', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

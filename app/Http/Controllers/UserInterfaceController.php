@@ -25,8 +25,7 @@ class UserInterfaceController extends Controller
         $data['new_person_data'] = (array)json_decode($cliente->get_new_person_setup());
         $data['buddies_data'] = json_decode($cliente->get_buddies($session));
 
-        return view('dashboard', $data); //user.dashboard
-         //$this->layout->content = View::make('pages.dashboard',$data);
+        return view('dashboard', $data); //user.dashboard         
     }
     
     /**
@@ -43,9 +42,8 @@ class UserInterfaceController extends Controller
         //$data['buddies_data'] = json_decode(file_get_contents('localhost:8000/webservices/get-buddies/'.$session));
         
         $cliente = new WebServicesController;                
-        $data['buddy_data'] = (array)json_decode($cliente->get_buddy());        
+        $data['buddy_data'] = (array)json_decode($cliente->get_buddy($session, $person));        
 
         return view('person_memories', $data);
-         //$this->layout->content = View::make('pages.dashboard',$data);
     }
 }

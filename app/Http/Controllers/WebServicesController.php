@@ -72,13 +72,12 @@ class WebServicesController extends Controller
     
     public function get_buddy($session, $person) //recupera los datos de una sola persona
     {
+        $tmp[1] = array("buddy_id"=>1,"gender"=>"Mujer", "buddy_nickname"=>"Amorcito", "avatar"=>"avatar-2.jpg", "compatibility"=>"50", "message"=>"media compatibilidad" );
+        $tmp[2] = array("buddy_id"=>2,"gender"=>"Mujer", "buddy_nickname"=>"Hermanita", "avatar"=>"avatar-3.jpg", "compatibility"=>"70", "message"=>"Hay compatibilidad" );
+                    
         $result['code']=200;         
-        $result['gender'] = "Mujer";
-        $result['avatar'] = "avatar-3.jpg";                        
-        $result['nickname'] = "Hermanita";
-        $result['percentage'] = 70; //compatibilidad
-        $result['message']="Hay compatibilidad";
-                
+        $result['buddy']= $tmp[$person];        
+                               
         return json_encode($result);
     }
 }

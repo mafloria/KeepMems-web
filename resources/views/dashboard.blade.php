@@ -11,7 +11,7 @@
     <nav>
       <?php foreach($buddies_data->buddy as $key=>$value){ ?>
         <p>
-            <a href="javascript:void(0);">
+            <a href="<?php echo WEBSERVICES; ?>person-memories/<?php echo $session_id; ?>/<?php echo $value->buddy_id; ?>">
                 <img src="../images/avatars/<?php echo $value->avatar; ?>" /><?php echo $value->buddy_nickname." (".$value->compatibility." % compatibilidad)"; ?></a>
          </p>
       <?php } ?>                    
@@ -48,8 +48,9 @@
        </form>   
      </div>          
      <div id="new-person-messages"></div>
-            
-@endsection
+   </section>  
 <script>
     var validation = "<?php echo $session_id; ?>";
 </script>
+            
+@endsection
