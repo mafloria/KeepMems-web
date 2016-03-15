@@ -1,7 +1,7 @@
 @extends('layouts.user')
 
 @section('js')
-<script src="../js/dashboard.min.js" type="text/javascript"></script>
+<script src="<?php echo CC_JS_IMG; ?>js/dashboard.min.js" type="text/javascript"></script>
 @endsection
 
 @section('content')
