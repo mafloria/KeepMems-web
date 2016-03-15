@@ -44,7 +44,8 @@ Route::get('webservices/get-new-person-setup', function () {
     return json_encode($result);
 });
 */
-define('WEBSERVICES','http://localhost:8000/');
+define('WEBSERVICES','http://localhost:8000/'); //value for web services main route
+define('CC_JS_IMG','http://localhost:8000/'); //value for css, js, and images includes
 
 Route::post('webservices/create-account', "WebServicesController@create_account"); //hace registro
 Route::post('webservices/validate-token', "WebServicesController@validate_token"); //hace login
@@ -54,5 +55,6 @@ Route::get('webservices/get-buddies/{session}', "WebServicesController@get_buddi
 Route::post('webservices/add-buddy/{session}', "WebServicesController@add_buddy"); //crea una persona
 
 Route::get('dashboard/{session}', "UserInterfaceController@user_dashboard"); //pagina inicial del usuario logueado
-Route::get('person-memories/{session}/{person}', "UserInterfaceController@person_memories"); //Recupera el dashboard de una presona
+Route::get('person-memories/{session}/{person}', "UserInterfaceController@person_memories")->where('person', '[0-9]+'); //Recupera el dashboard de una presona
+ 
 

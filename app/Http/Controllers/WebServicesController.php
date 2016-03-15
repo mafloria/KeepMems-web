@@ -80,4 +80,25 @@ class WebServicesController extends Controller
                                
         return json_encode($result);
     }
+    
+    public function get_total_buddy_memories($session, $person) //recupera las memorias que se tienen con una persona
+    {                            
+        $result['code']=200;         
+        $result['message']="Memorias recuperadas";        
+        $result['total_memories'] = 15;        
+
+        return json_encode($result);
+    }
+    
+    public function get_buddy_memories($session, $person) //recupera las memorias que se tienen con una persona
+    {                            
+        $result['code']=200;         
+        $result['message']="Memorias recuperadas";        
+        $result['memory'][0] = array("memory_id"=>4,"title"=>"Cine Asqueroso", "desc"=>"Primero ella fue la que escogio la pelicula, me tocó pagar a mi todo y despues salio con el cuento que estaba enferma y nos fuismos en medio de la pelicula.", "date"=>"Marzo 14 - 2015", "feeling"=>"bad", "category"=>"Cine", "compatibility"=> array());
+        $result['memory'][1] = array("memory_id"=>3,"title"=>"Picnic en Pance", "desc"=>"Picnic sorpresa cerca al rio, la comida deliciosa y muy poca gente cerca.", "date"=>"Marzo 2 2016", "feeling"=>"great", "category"=>"Salidas", "compatibility"=> array('salidas'=>100) );
+        $result['memory'][2] = array("memory_id"=>2,"title"=>"Almuerzo con los suegros", "desc"=>"No se que colocar aca.", "date"=>"Diciembre 8 2015", "feeling"=>"wow", "category"=>"Familia", "compatibility"=> array('Cenas en Familia'=>80) );
+        $result['memory'][3] = array("memory_id"=>1,"title"=>"Borrachera de Grado", "desc"=>"En el grado de mi cuñado, fue genial como en la universidad..", "date"=>"Noviembre 20 2015", "feeling"=>"nice", "category"=>"Familia, Celebracion", "compatibility"=> array('Celebraciones familiares'=>80) );
+
+        return json_encode($result);
+    }
 }
