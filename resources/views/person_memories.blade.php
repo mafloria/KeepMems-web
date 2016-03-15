@@ -1,14 +1,28 @@
-<?/*@extends('layouts.user')
+@extends('layouts.user')
 
 @section('js')
-<script src="../js/person_memories.min.js" type="text/javascript"></script>
+<script src="<?php echo CC_JS_IMG; ?>js/person_memories.min.js" type="text/javascript"></script>
 @endsection
 
 @section('content')
-*/?>
+
   <section class="intro-section center">       
-    <p><strong><?php echo $buddy_data['buddy']->buddy_nickname; ?><br /></strong></p>        
-      <div class="content-section">
+    <p><strong><?php echo $buddy_data['buddy']->buddy_nickname; ?><br /></strong></p>
+    <div><?php echo $buddy_total_memories; ?> recuerdos</div>   
+      <ul>
+          <?php           
+          foreach($buddy_memories['memory'] as $key=>$value){ ?>
+            <li>
+                <a href="javascript:void(0);" class="buddy-memory-row"  id="buddy-memory-row_<?php echo $value->memory_id; ?>">
+                    <img src="<?php echo CC_JS_IMG; ?>images/memory_feeling/<?php echo $value->feeling; ?>" /><?php echo $value->title;?></a>
+                
+                <div class="buddy-memory-detail" id="buddy-memory-detail-<?php echo $value->memory_id; ?>" style="display: none">
+                    <p><?php echo $value->desc; ?></p>
+                </div>
+             </li>
+          <?php } ?>                    
+      </ul>        
+      <div class="content-section">                           
         <form name="new_person_form" id="new-person-form" action="" method="POST">
         <fieldgroup>          
             <div class="fieldinput">
@@ -33,5 +47,4 @@
      <div id="new-person-messages"></div>
    </section>  
 
-<?/*           
-@endsection*/?>
+@endsection

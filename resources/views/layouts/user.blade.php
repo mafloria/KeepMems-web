@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Keep Memories</title>
-  <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo CC_JS_IMG; ?>styles/styles.css">
   <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
   
-  <script src="../js/jquery/jquery-1.12.1.min.js" type="text/javascript"></script>
-  <script src="../js/jquery/validate/dist/jquery.validate.min.js" type="text/javascript"></script>          
+  <script src="<?php echo CC_JS_IMG; ?>js/jquery/jquery-1.12.1.min.js" type="text/javascript"></script>
+  <script src="<?php echo CC_JS_IMG; ?>js/jquery/validate/dist/jquery.validate.min.js" type="text/javascript"></script>          
   @yield('js')
 </head>
 <body>
