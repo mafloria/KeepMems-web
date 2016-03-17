@@ -47,7 +47,7 @@ class WebServicesController extends Controller
         $result['code']=200; 
         $result['message']="Data to create new person";
         $result['genders'] = array("1"=>"Mujer","2"=>"Hombre");
-        $result['avatars'] = array("1"=>"avatar-1.jpg","2"=>"avatar-2.jpg","3"=>"avatar-3.jpg","4"=>"avatar-4.jpg");                        
+        $result['avatars'] = array("1"=>"female","2"=>"female","3"=>"female-1","4"=>"female-2");                        
                 
         return json_encode($result);
     }
@@ -55,8 +55,9 @@ class WebServicesController extends Controller
     public function get_buddies($session){ //todas las personas creadas
         $result['code']=200; 
         $result['message']="Tienes # persona en tu lista";
-        $result['buddy'][1] = array("buddy_id"=>1,"gender"=>2, "buddy_nickname"=>"Amorcito", "avatar"=>"avatar-2.jpg", "compatibility"=>"50" );
-        $result['buddy'][2] = array("buddy_id"=>2,"gender"=>1, "buddy_nickname"=>"Hermanita", "avatar"=>"avatar-3.jpg", "compatibility"=>"70" );
+        $result['buddy'][1] = array("buddy_id"=>1,"gender"=>2, "buddy_nickname"=>"Amorcito", "avatar"=>"male", "compatibility"=>"50" );
+        $result['buddy'][2] = array("buddy_id"=>2,"gender"=>1, "buddy_nickname"=>"Hermanita", "avatar"=>"femme", "compatibility"=>"70" );
+        $result['buddy'][3] = array("buddy_id"=>3,"gender"=>2, "buddy_nickname"=>"Tini", "avatar"=>"male", "compatibility"=>"0" );
                 
         return json_encode($result);
     }                    
@@ -72,8 +73,9 @@ class WebServicesController extends Controller
     
     public function get_buddy($session, $person) //recupera los datos de una sola persona
     {
-        $tmp[1] = array("buddy_id"=>1,"gender"=>"Mujer", "buddy_nickname"=>"Amorcito", "avatar"=>"avatar-2.jpg", "compatibility"=>"50", "message"=>"media compatibilidad" );
-        $tmp[2] = array("buddy_id"=>2,"gender"=>"Mujer", "buddy_nickname"=>"Hermanita", "avatar"=>"avatar-3.jpg", "compatibility"=>"70", "message"=>"Hay compatibilidad" );
+        $tmp[1] = array("buddy_id"=>1,"gender"=>"Hombre", "buddy_nickname"=>"Amorcito", "avatar"=>"male", "compatibility"=>"50", "message"=>"media compatibilidad" );
+        $tmp[2] = array("buddy_id"=>2,"gender"=>"Mujer", "buddy_nickname"=>"Hermanita", "avatar"=>"femme", "compatibility"=>"70", "message"=>"Hay compatibilidad" );
+        $tmp[3] = array("buddy_id"=>3,"gender"=>"Hombre", "buddy_nickname"=>"Tini", "avatar"=>"male", "compatibility"=>"0", "message"=>"No existe compatibilidad" );
                     
         $result['code']=200;         
         $result['buddy']= $tmp[$person];        

@@ -5,8 +5,7 @@
 @endsection
 
 @section('content')
-
-  <section class="intro-section center">       
+      
     <p><strong><?php echo $buddy_data['buddy']->buddy_nickname; ?><br /></strong></p>
     <div><?php echo $buddy_total_memories; ?> recuerdos</div>   
       <ul>
@@ -43,8 +42,8 @@
               <input type="submit" name="add_person_button" id="add-person-button" value="Adicionar Persona" />                    
         </div>         
        </form>   
-     </div>          
-     <div id="new-person-messages"></div>
-   </section>  
+     </div>
+   
+   
 
 @endsection

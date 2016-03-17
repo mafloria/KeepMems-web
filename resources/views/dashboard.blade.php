@@ -6,6 +6,7 @@
 
 @section('content')
 
+<!--
   <section class="intro-section center">       
     <p><strong>Dashboard<br /></strong></p>        
     <nav>
@@ -49,6 +50,163 @@
      </div>          
      <div id="new-person-messages"></div>
    </section>  
+   -->
+   
+   
+   
+   <!--PAGES MY LIST-->
+  <section class="pages-section my-list">
+    <div class="section-full-border title-main-section">
+      <div class="content-section">
+        <h2>Mi Lista</h2>
+      </div>
+    </div>
+    <section class="people-list">            
+    <?php foreach($buddies_data->buddy as $key=>$value){ ?>
+         <p>
+            <a href="<?php echo WEBSERVICES; ?>person-memories/<?php echo $session_id; ?>/<?php echo $value->buddy_id; ?>">
+                <img src="../images/avatars/<?php echo $value->avatar; ?>" /><?php echo $value->buddy_nickname." (".$value->compatibility." % compatibilidad)"; ?></a>
+         </p>
+         <div class="section-full-border">
+            <div class="content-section">
+              <a class="display-section" href="<?php echo WEBSERVICES; ?>person-memories/<?php echo $session_id; ?>/<?php echo $value->buddy_id; ?>">
+                <div class="display-section-avatar">  
+                  <svg class="avatar-<?php echo $value->avatar; ?>"><use xlink:href="#avatar-<?php echo $value->avatar; ?>" /></svg>  
+                </div>
+                <div class="display-section-info">
+                    <div class="display-section-name">
+                      <?php echo $value->buddy_nickname; ?>
+                    </div>
+                    <div class="display-section-resume">
+                      <span># Recuerdos</span>
+                      <span># Inter&eacute;ses</span>
+                    </div>
+                </div>
+                <div class="compatibility-item-result comp-positive" href="">
+                  <svg class="comp-result-icon"><use xlink:href="#compatible" /></svg> 
+                  <p><?php echo $value->compatibility; ?>%</p> 
+                </div>
+              </a>
+            </div>
+          </div>
+         
+         
+    <?php } ?>  
+      
+      <div class="section-full-border">
+        <div class="content-section">
+          <a class="display-section" href="">
+            <div class="display-section-avatar">  
+              <svg class="avatar-femme" style="display:none;"><use xlink:href="#avatar-femenino" /></svg>  
+              <svg class="avatar-male"><use xlink:href="#avatar-masculino" /></svg> 
+            </div>
+            <div class="display-section-info">
+                <div class="display-section-name">
+                  Nombre de persona
+                </div>
+                <div class="display-section-resume">
+                  <span># Recuerdos</span>
+                  <span># Inter&eacute;ses</span>
+                </div>
+            </div>
+            <div class="compatibility-item-result comp-positive" href="">
+              <svg class="comp-result-icon"><use xlink:href="#compatible" /></svg> 
+              <p>100%</p> 
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="section-full-border">
+        <div class="content-section">
+          <a class="display-section" href="">
+            <div class="display-section-avatar">  
+              <svg class="avatar-femme"><use xlink:href="#avatar-femenino" /></svg>  
+              <svg class="avatar-male" style="display:none;"><use xlink:href="#avatar-masculino" /></svg> 
+            </div>
+            <div class="display-section-info">
+                <div class="display-section-name">
+                  Nombre de persona
+                </div>
+                <div class="display-section-resume">
+                  <span># Recuerdos</span>
+                  <span># Inter&eacute;ses</span>
+                </div>
+            </div>
+            <div class="compatibility-item-result comp-negative" href="">
+              <svg class="comp-result-icon"><use xlink:href="#incompatible" /></svg> 
+              <p>100%</p> 
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="section-full-border">
+        <div class="content-section">
+          <a class="display-section" href="">
+            <div class="display-section-avatar">  
+              <svg class="avatar-femme"><use xlink:href="#avatar-femenino" /></svg>  
+              <svg class="avatar-male" style="display:none;"><use xlink:href="#avatar-masculino" /></svg> 
+            </div>
+            <div class="display-section-info">
+                <div class="display-section-name">
+                  Nombre de persona
+                </div>
+                <div class="display-section-resume">
+                  <span># Recuerdos</span>
+                  <span># Inter&eacute;ses</span>
+                </div>
+            </div>
+            <div class="compatibility-item-result comp-non" href="">
+              <span>Ingresa algunos inter&eacute;ses para ver<br /> la compatibilidad con esta persona</span> 
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <a class="add-btn" href="#">
+      <svg class="icon-plus"><use xlink:href="#agregar" /></svg>
+      <p>Agregar una persona</p>
+    </a>
+  </section>
+   
+   <!--PAGES CREATE PERSON-->
+  <section class="pages-section create-person-page">
+    <div class="content-section">
+      <a class="add-btn" href="#">
+        <svg class="icon-plus"><use xlink:href="#agregar" /></svg>
+        <p>Agregar una persona</p>
+      </a>
+
+      <section class="action-box-wrap">
+        <div class="action-box">
+          <div class="action-box-title">
+            Nueva Persona
+          </div> 
+          <div class="action-box-info">
+            <form>
+              <fieldgroup>
+                <div class="fieldinput">
+                        <select name="Escoge un sexo:">
+                            <option>Masculino</option>
+                      <option>Femenino</option>
+                  </select>
+                </div>
+                <div class="fieldinput">
+                  <input name="" type="text" value="Como deseas llamarlo(a):">
+                  <span class="character-counter">30 caract&eacute;res</span>
+                </div>
+              </fieldgroup>
+            </form>
+          </div> 
+          <div class="action-box-btn">
+            <a href="">Crear</a>
+          </div> 
+        </div>  
+      </section>
+
+    </div>
+  </section>    
+   
+   
 <script>
     var validation = "<?php echo $session_id; ?>";
 </script>

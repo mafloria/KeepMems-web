@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Keep Memories</title>
-  <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+  <title>Keep Memories</title>  
+  <link rel="stylesheet" type="text/css" href="<?php echo CC_JS_IMG; ?>styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo CC_JS_IMG; ?>styles/inside.css">
   <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
   
-  <script src="../js/jquery/jquery-1.12.1.min.js" type="text/javascript"></script>
-  <script src="../js/jquery/validate/dist/jquery.validate.min.js" type="text/javascript"></script>          
-  <?php echo $__env->yieldContent('js'); ?>
+  <script src="<?php echo CC_JS_IMG; ?>js/jquery/jquery-1.12.1.min.js" type="text/javascript"></script>
+  <script src="<?php echo CC_JS_IMG; ?>js/jquery/validate/dist/jquery.validate.min.js" type="text/javascript"></script>          
+  <?php echo $__env->yieldContent('js'); ?>  
+  
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -120,7 +122,7 @@
     <circle cx="15" cy="49.7" r="12.8"/>
     <circle cx="15" cy="85.6" r="12.8"/>
   </symbol>
-  <symbol id="avatar-masculino" viewBox="0 0 84.4 99.6">
+  <symbol id="avatar-male" viewBox="0 0 84.4 99.6">
     <path d="M20,43.6c3.2,10.3,11.2,21.1,22.2,21.1c10.9,0,19-10.7,22.2-21.1c2.7-0.9,4.9-3.6,5.8-7.1c1.2-4.8-0.6-9.2-4-10.6
       c0.3-1.3,0.5-2.6,0.5-3.9c0-11.3-11.3-20.5-25.2-20.5c-13.9,0-25.3,9.2-25.3,20.5c0,1.6,0.3,3.2,0.7,4.7c-2.5,1.9-3.6,5.7-2.6,9.8
       C15.1,40,17.3,42.7,20,43.6L20,43.6z M18.3,30.4c0.4-0.6,0.8-1,1.4-1.2c0.1,0,0.3,0,0.4,0c0.1,0,0.2,0,0.3,0l1.7,0.2l0.3-1.7
@@ -180,7 +182,7 @@
     <path d="M73.2,38.9c-9.2,4.6-13.7,0.6-13.9,0.5c-1.1-1-2.8-1-3.9,0.1c-1.1,1.1-1,2.8,0.1,3.8c0.2,0.2,3.4,3.3,9.5,3.3
       c2.9,0,6.5-0.7,10.7-2.8c1.4-0.7,1.9-2.3,1.2-3.7C76.2,38.8,74.6,38.3,73.2,38.9L73.2,38.9z M73.2,38.9"/>
   </symbol>
-  <symbol id="avatar-femenino" viewBox="0 0 79.1 99.6">
+  <symbol id="avatar-femme" viewBox="0 0 79.1 99.6">
     <path d="M11.2,47.1c0,4.8,3.2,8.6,7,8.6h10c3.3,3,7.1,4.9,11.2,4.9c4.1,0,7.9-1.9,11.2-4.9h10c3.9,0,7-3.9,7-8.6V34.6h0
       c0-0.9,0.1-1.9,0.1-3C67.6,14.7,55,1,39.4,1C23.8,1,11.2,14.7,11.2,31.6c0,1,0,2,0.1,3h-0.1V47.1z M39.4,57.1
       c-1.8,0-3.5-0.5-5.2-1.4c-1.4-0.7-2.7-1.7-4-2.9c-4.2-3.9-7.5-10.1-9.2-16l-0.3-1.1l-1.2-0.1c-0.6-0.1-1.2-0.4-1.9-1
@@ -193,9 +195,36 @@
   </symbol>
 </svg>
 
-    <div id="wrapper">
-         <?php echo $__env->yieldContent('content'); ?>
+<div id="wrapper">
+  <header>
+    <div class="logo">
+      <a href=""><img src="<?php echo CC_JS_IMG; ?>images/keep-app-logo.png" width="87" height="91"></a>
     </div>
+    <div class="top-nav">
+      <div class="icon-nav">
+        <a href="">
+          <svg class="icon-menu"><use xlink:href="#main-menu" /></svg>  
+        </a>
+      </div>
+      
+      <div class="icon-nav">
+        <a href="">
+          <svg class="icon-notificacion"><use xlink:href="#notificaciones" /></svg>  
+        </a>
+        <span class="notification-counter">00</span>
+      </div>
+      <div class="icon-nav">
+        <a href="">
+          <svg class="icon-list-people"><use xlink:href="#lista-personas" /></svg>  
+        </a>
+      </div>
+    </div>
+  </header>
+  <div id="wrapper">
+         <?php echo $__env->yieldContent('content'); ?>
+  </div>
+  
+</div>
 </body>
 </html>
 

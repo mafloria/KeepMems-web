@@ -1,0 +1,364 @@
+/*HEADER*/
+header{
+  padding: 2%;
+  width: 96%;
+  background-color: #4f3871;
+  display: inherit;
+}
+a.btn-block{
+  padding: 0.2em 0.5em;
+  border-radius: 0.3em;
+  background-color: #4f3871;
+  color: white;
+}
+.logo{
+  width: 35px;
+  float: left;
+}
+.logo a{
+  display: block;
+  width: 100%;
+}
+.logo a img{
+  width: 100%;
+  height: auto;
+}
+.top-nav{
+  width: 80%;
+  float: right;
+}
+.icon-nav{
+  float: right;
+  width: auto;
+  position: relative;
+}
+.icon-nav a{
+  width: 100%;
+  display: block;
+}
+.icon-nav a svg{
+  fill: #876ead;
+  margin-left: 2em;
+}
+.icon-nav a svg:hover{
+  fill: white;
+}
+.icon-nav a svg.icon-menu{
+  width: 11px;
+  height: 40px; 
+ }
+.icon-nav a svg.icon-notificacion{
+  width: 40px;
+  height: 40px;
+}
+.icon-nav a svg.icon-list-people{
+  width: 53px;
+  height: 40px;
+}
+span.notification-counter{
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  color: white;
+  background-color: #4f3871;
+  border: 1px solid #876ead;
+  top: -3px;
+  right: -7px;
+  font-size: 0.75em;
+  text-align: center;
+  line-height: 1.5em;
+}
+/*general pages css*/
+.pages-section{
+  width: 100%;
+}
+a.add-btn{
+  width: 96%;
+  display: inline-block;
+  padding: 2%;
+  background-color: #876ead;
+  color: white;
+}
+a.add-btn:hover{
+  background-color: #4F3871; 
+}
+a.add-btn svg{
+  width: 40px;
+  height: 40px;
+  float: left;
+  fill: white;
+}
+a.add-btn p{
+  width: auto;
+  float: left;
+  font-size: 1.2em;
+  line-height: 2em;
+  margin-left: 0.5em; 
+}
+.action-box-wrap{
+  width: 94%;
+  padding: 3%;
+}
+.action-box{
+  width: 100%;
+  border: 1px solid #876ead;
+  border-radius: 3px;
+}
+.action-box-title{
+  width: 96%;
+  padding: 3% 2%;
+  color: white;
+  background-color: #876ead;
+  font-size: 1.2em;
+}
+.action-box-info{
+  width: 92%;
+  padding: 4%;
+}
+.action-box-btn a{
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 3% 0;
+  font-size: 1.2em;
+  color: white;
+  background-color: #4f3871;
+}
+.action-box-btn a:hover{
+  background-color: #876ead;
+}
+form select{
+  width: 100%;
+}
+form select,
+form input[type="text"],
+form input[type="password"]{
+  color: #876ead;
+  border-bottom: 2px solid #876ead;
+}
+form select,
+form input[type="text"]:focus,
+form input[type="password"]:focus{
+   background-color: white;
+  color: #4f3871;
+  border-bottom: 2px solid #4f3871;
+}form select:focus{
+  border: none;
+}
+span.character-counter{
+  float: right;
+  font-size: 0.8em;
+  color: #876ead;
+}
+.section-full-border{
+  width: 96%;
+  border-bottom: 1px solid #d6c7ec;
+  padding:  2%;
+  display: inline-block;
+}
+.section-full-border:hover{
+  background-color: #d6c7ec;
+}
+a.display-section{
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+.display-section-avatar{
+  width: auto;
+  float: left;
+}
+.display-section-avatar svg{
+  width: 42px;
+  height: 54px;
+  fill: #4f3871;
+}
+.display-section-avatar svg.agradable{
+  width: 30px;
+  height: 35px;
+}
+.display-section-info{
+  width: 80%;
+  float: left;
+  margin: 0.5em 0 0 0.5em;
+}
+.display-section-info .display-section-name{
+  font-size: 1.3em;
+}
+.display-section-resume span{
+  font-size: 0.9em;
+}
+.compatibility-item-result{
+  width: auto;
+  position: absolute;
+  right: 0;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  color: white;
+  top: 0.5em;
+}
+.comp-positive{
+  background-color: #2db617;
+}
+.comp-negative{
+  background-color: #cd2727;
+}
+.comp-non{
+  background-color: #4f3871;
+}
+.comp-non span{
+  font-size: 0.7em;
+  text-align: center;
+  display: inherit;
+}
+.compatibility-item-result.comp-non{
+  top: 0.5em;
+  padding: 0.2em 0.5em;
+}
+.compatibility-item-result svg{
+  width: 22px;
+  height: 23px;
+  float: left;
+  fill: white;
+}
+.compatibility-item-result p{
+  width: auto;
+  float: left;
+  line-height: 1.4em;
+  margin-left: 0.5em;
+}
+.title-main-section{
+  background-color: #d6c7ec
+}
+.resume-interest-list{
+  margin: 0.5em 0;
+  display: inline-block;
+}
+.resume-interest-list li{
+  margin: 0.5em 0;
+}
+.resume-interest-list h4{
+  font-size: 1.2em;
+}
+.resume-interest-list svg{
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin-right: 0.4em;
+  fill: #4f3871;
+}
+label.label-title{
+  color: #4f3871;
+  font-size: 1.3em;
+}
+.pick-date{
+  margin: 1em 0;
+  display: inline-block;
+}
+.pick-date label,
+.pick-date svg{
+  float: left;
+}
+.pick-date svg{
+  width: 36px;
+  height: 33px;
+  fill: #4f3871;
+}
+ul.estado-recuerdo{
+  width: 100%;
+  display: inline-block;
+  margin: 0.5em 0;
+}
+ul.estado-recuerdo li{
+  width: 14%;
+  float: left;
+  margin: 0 1%;
+  text-align: center;
+}
+ul.estado-recuerdo li a svg{
+  width: 45px;
+  height: 52px;
+  fill: #4f3871;
+}
+ul.estado-recuerdo li a span{
+  font-size: 0.8em;
+  line-height: 0.8em;
+}
+.memory-std{
+  width: 100%;
+  margin: 0 0 0.5em 0;
+}
+.compatibility-bar{
+  width: 96%;
+  display: inherit;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  color: white;
+}
+.compatibility-bar svg{
+  width: 22px;
+  height: 23px;
+  float: left;
+  fill: white;
+}
+.compatibility-bar p{
+  width: auto;
+  float: left;
+  line-height: 1.4em;
+  margin-left: 0.5em;
+}
+.interest-list .section-full-border{
+  position: relative;
+} 
+.interest-icon{
+  float: right;
+}
+.interest-icon svg{
+  width: 37px;
+  height: 40px;
+  fill: #4f3871;
+  float: right;
+}
+.interest-calification{
+  width: 70%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #4f3871;
+  padding: 1%;
+}
+.interest-calification a{
+  float: left;
+  color: white;
+  width: 23%;
+  text-align: center;
+  padding: 1%;
+  border-radius: 0.3em;
+}
+.interest-calification a:hover{
+  background-color: #d6c7ec;
+}
+.interest-calification a.interest-calification-eliminate{
+  padding: 2em 1% 1% 1%;
+}
+.interest-calification svg{
+  width: 25px;
+  height: 28px;
+  fill: white;
+}
+.interest-calification a span{
+  font-size: 0.8em;
+  display: inherit
+}
+.interest-std{
+  margin: 0;
+  padding: 1em 0.5em;
+}
+.interest-std ul.estado-recuerdo li{
+  width: 20%;
+  margin-right: 0.5em;
+}
+
+
+

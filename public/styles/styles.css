@@ -41,6 +41,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+h1, h2, h3, h4{
+  margin: 0;
+  padding: 0;
+}
+h2{
+  color: #4f3871;
+  font-size: 1.3em;
+}
 .clearfix:after {
     content: ".";
     display: block;
@@ -79,8 +87,10 @@ body{
   width: 100%;
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 1em;
-  background-color: #d6c7ec;
+  /*background-color: #d6c7ec;*/
+  background-color: white;
   zoom: 1;
+  color: #775ca0;
 }
 #wrapper{
   width: 100%;
@@ -95,8 +105,22 @@ h1 img{
   width: 10%;
   height: auto;
 }
+textarea{
+  width: 96%;
+  font-size: 1.2em;
+  color: #876ead;
+  height: 4em;
+  padding: 0 2%;
+  font-family: 'PT Sans narrow', sans-serif;
+  background-color: inherit;
+  border: 2px solid #876ead;
+  margin-top: 1em;
+}
+textarea:focus{
+  background: none;
+}
+form select,
 form input[type="text"],
-form input[type="email"],
 form input[type="password"]{
   background-color: inherit;
   font-size: 1.4em;
@@ -107,8 +131,7 @@ form input[type="password"]{
   border: none;
   font-family: 'PT Sans narrow', sans-serif;
 }
-input[type="text"]:focus, 
-input[type="email"]:focus{
+input[type="text"]:focus{
  background-color: #f7f1d7;
 }
 .button-section input[type="submit"]{
@@ -126,7 +149,7 @@ form input[type="submit"]:hover{
 
 }
 form fieldgroup{
-      width: 100%;
+    width: 100%;
     display: inline-block;
 }
 /*INTRO*/
@@ -150,7 +173,7 @@ form fieldgroup{
   font-size: 1.3em;
 }
 .register-log-menu a:hover,
-.register-log-menu a.active{
+.register-log-menu a:active{
   background-color: #775ca0;
   color: white;
 }
@@ -164,19 +187,17 @@ form fieldgroup{
   width: 100%;
 }
 .homeLog-section form input[type="text"],
-.homeLog-section form input[type="email"],
 .homeLog-section form input[type="password"]{
   color: #775ca0;
   border-bottom: 2px solid #775ca0;
 }
 .homeLog-section form input[type="text"]:focus,
-.homeLog-section form input[type="email"]:focus,
 .homeLog-section form input[type="password"]:focus{
   background: none;
   color: white;
   border-bottom: 2px solid white;
 }
-.fieldinput label{
+.fieldinput label.error-validation{
   font-size: 0.8em;
   padding: 0.2em 0.3em;
   background-color: red;
