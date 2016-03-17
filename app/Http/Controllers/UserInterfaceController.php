@@ -42,9 +42,9 @@ class UserInterfaceController extends Controller
         //$data['buddies_data'] = json_decode(file_get_contents('localhost:8000/webservices/get-buddies/'.$session));
         
         $cliente = new WebServicesController;                
-        $data['buddy_data'] = (array)json_decode($cliente->get_buddy($session, $person));
-        $data['buddy_total_memories'] = json_decode($cliente->get_total_buddy_memories($session, $person))->total_memories;        
+        $data['buddy_data'] = (array)json_decode($cliente->get_buddy($session, $person));                
         $data['buddy_memories'] = (array)json_decode($cliente->get_buddy_memories($session, $person));        
+        $data['buddy_total_memories'] = count($data['buddy_memories']['memory']);        
 
         return view('person_memories', $data);
     }

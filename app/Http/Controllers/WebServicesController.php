@@ -55,9 +55,9 @@ class WebServicesController extends Controller
     public function get_buddies($session){ //todas las personas creadas
         $result['code']=200; 
         $result['message']="Tienes # persona en tu lista";
-        $result['buddy'][1] = array("buddy_id"=>1,"gender"=>2, "buddy_nickname"=>"Amorcito", "avatar"=>"male", "compatibility"=>"50" );
-        $result['buddy'][2] = array("buddy_id"=>2,"gender"=>1, "buddy_nickname"=>"Hermanita", "avatar"=>"femme", "compatibility"=>"70" );
-        $result['buddy'][3] = array("buddy_id"=>3,"gender"=>2, "buddy_nickname"=>"Tini", "avatar"=>"male", "compatibility"=>"0" );
+        $result['buddy'][1] = array("buddy_id"=>1,"gender"=>2, "buddy_nickname"=>"Amorcito", "avatar"=>"male", "compatibility"=>"50", "num_interest"=>"8", "num_memories"=>"4" );
+        $result['buddy'][2] = array("buddy_id"=>2,"gender"=>1, "buddy_nickname"=>"Hermanita", "avatar"=>"femme", "compatibility"=>"70", "num_interest"=>"10", "num_memories"=>"3" );
+        $result['buddy'][3] = array("buddy_id"=>3,"gender"=>2, "buddy_nickname"=>"Tini", "avatar"=>"male", "compatibility"=>"0", "num_interest"=>"0", "num_memories"=>"4" );
                 
         return json_encode($result);
     }                    
@@ -66,17 +66,18 @@ class WebServicesController extends Controller
         
         $result['code']=201; 
         $result['message']="Persona creada.";        
-        $result['buddy_id']=1;
+        $result['new_buddy_id']=4;
         
         return json_encode($result);
     }
     
     public function get_buddy($session, $person) //recupera los datos de una sola persona
     {
-        $tmp[1] = array("buddy_id"=>1,"gender"=>"Hombre", "buddy_nickname"=>"Amorcito", "avatar"=>"male", "compatibility"=>"50", "message"=>"media compatibilidad" );
-        $tmp[2] = array("buddy_id"=>2,"gender"=>"Mujer", "buddy_nickname"=>"Hermanita", "avatar"=>"femme", "compatibility"=>"70", "message"=>"Hay compatibilidad" );
-        $tmp[3] = array("buddy_id"=>3,"gender"=>"Hombre", "buddy_nickname"=>"Tini", "avatar"=>"male", "compatibility"=>"0", "message"=>"No existe compatibilidad" );
-                    
+        $tmp[1] = array("buddy_id"=>1,"gender"=>"Hombre", "buddy_nickname"=>"Amorcito", "avatar"=>"male", "compatibility"=>"50", "message"=>"media compatibilidad", "num_interest"=>"8", "num_memories"=>"4" );
+        $tmp[2] = array("buddy_id"=>2,"gender"=>"Mujer", "buddy_nickname"=>"Hermanita", "avatar"=>"femme", "compatibility"=>"70", "message"=>"Hay compatibilidad", "num_interest"=>"10", "num_memories"=>"3" );
+        $tmp[3] = array("buddy_id"=>3,"gender"=>"Hombre", "buddy_nickname"=>"Tini", "avatar"=>"male", "compatibility"=>"0", "message"=>"No existe compatibilidad", "num_interest"=>"0", "num_memories"=>"4" );
+        $tmp[4] = array("buddy_id"=>4,"gender"=>"Mujer", "buddy_nickname"=>"Nata", "avatar"=>"femme", "compatibility"=>"0", "message"=>"No existe compatibilidad", "num_interest"=>"0", "num_memories"=>"0");
+        
         $result['code']=200;         
         $result['buddy']= $tmp[$person];        
                                
@@ -93,14 +94,19 @@ class WebServicesController extends Controller
     }
     
     public function get_buddy_memories($session, $person) //recupera las memorias que se tienen con una persona
-    {                            
-        $result['code']=200;         
-        $result['message']="Memorias recuperadas";        
-        $result['memory'][0] = array("memory_id"=>4,"title"=>"Cine Asqueroso", "desc"=>"Primero ella fue la que escogio la pelicula, me tocó pagar a mi todo y despues salio con el cuento que estaba enferma y nos fuismos en medio de la pelicula.", "date"=>"Marzo 14 - 2015", "feeling"=>"bad", "category"=>"Cine", "compatibility"=> array());
-        $result['memory'][1] = array("memory_id"=>3,"title"=>"Picnic en Pance", "desc"=>"Picnic sorpresa cerca al rio, la comida deliciosa y muy poca gente cerca.", "date"=>"Marzo 2 2016", "feeling"=>"great", "category"=>"Salidas", "compatibility"=> array('salidas'=>100) );
-        $result['memory'][2] = array("memory_id"=>2,"title"=>"Almuerzo con los suegros", "desc"=>"No se que colocar aca.", "date"=>"Diciembre 8 2015", "feeling"=>"wow", "category"=>"Familia", "compatibility"=> array('Cenas en Familia'=>80) );
-        $result['memory'][3] = array("memory_id"=>1,"title"=>"Borrachera de Grado", "desc"=>"En el grado de mi cuñado, fue genial como en la universidad..", "date"=>"Noviembre 20 2015", "feeling"=>"nice", "category"=>"Familia, Celebracion", "compatibility"=> array('Celebraciones familiares'=>80) );
-
+    {
+        $result['code']=200;
+        if($person<4){
+            $result['message']="Memorias recuperadas";                
+            $result['memory'][0] = array("memory_id"=>4,"title"=>"Cine Asqueroso", "desc"=>"Primero ella fue la que escogio la pelicula, me tocó pagar a mi todo y despues salio con el cuento que estaba enferma y nos fuismos en medio de la pelicula.", "date"=>"Marzo 14 - 2015", "feeling"=>"hate", "category"=>"Cine", "compatibility"=> array());
+            $result['memory'][1] = array("memory_id"=>3,"title"=>"Picnic en Pance", "desc"=>"Picnic sorpresa cerca al rio, la comida deliciosa y muy poca gente cerca.", "date"=>"Marzo 2 2016", "feeling"=>"great", "category"=>"Salidas", "compatibility"=> array('salidas'=>100) );
+            $result['memory'][2] = array("memory_id"=>2,"title"=>"Almuerzo con los suegros", "desc"=>"No se que colocar aca.", "date"=>"Diciembre 8 2015", "feeling"=>"wow", "category"=>"Familia", "compatibility"=> array('Cenas en Familia'=>50) );
+            $result['memory'][3] = array("memory_id"=>1,"title"=>"Borrachera de Grado", "desc"=>"En el grado de mi cuñado, fue genial como en la universidad..", "date"=>"Noviembre 20 2015", "feeling"=>"nice", "category"=>"Familia, Celebracion", "compatibility"=> array('Celebraciones familiares'=>80) );
+        }else{
+            $result['message']="No tienes memorias con esta persona";                
+            $result['memory'] = array();
+        }                                                                            
+        
         return json_encode($result);
     }
 }

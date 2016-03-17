@@ -44,6 +44,7 @@ Route::get('webservices/get-new-person-setup', function () {
     return json_encode($result);
 });
 */
+define('APPURL','http://localhost:8000/'); //value for web services main route
 define('WEBSERVICES','http://localhost:8000/'); //value for web services main route
 define('CC_JS_IMG','http://localhost:8000/'); //value for css, js, and images includes
 
