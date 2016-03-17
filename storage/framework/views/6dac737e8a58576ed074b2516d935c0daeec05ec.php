@@ -196,6 +196,11 @@
     <div id="wrapper">
          <?php echo $__env->yieldContent('content'); ?>
     </div>
+
+<script>    
+    var callurl = "<?php echo WEBSERVICES; ?>";
+    var appurl = "<?php echo APPURL; ?>";
+</script>    
 </body>
 </html>
 

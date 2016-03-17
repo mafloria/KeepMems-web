@@ -113,10 +113,11 @@ a.add-btn p{
   font-size: 1.2em;
 }
 .action-box-info{
-  width: 92%;
-  padding: 4%;
+  width: 100%;
+  padding: 0;
 }
-.action-box-btn a{
+.action-box-btn a,
+form input[type="submit"]{
   width: 100%;
   display: block;
   text-align: center;
@@ -124,8 +125,12 @@ a.add-btn p{
   font-size: 1.2em;
   color: white;
   background-color: #4f3871;
+  border: 0;
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-top: 0.5em;
 }
-.action-box-btn a:hover{
+.action-box-btn a:hover,
+form input[type="submit"]:hover{
   background-color: #876ead;
 }
 form select{
@@ -253,7 +258,7 @@ label.label-title{
   font-size: 1.3em;
 }
 .pick-date{
-  margin: 1em 0;
+  margin: 1em 5%;
   display: inline-block;
 }
 .pick-date label,
@@ -286,8 +291,8 @@ ul.estado-recuerdo li a span{
   line-height: 0.8em;
 }
 .memory-std{
-  width: 100%;
-  margin: 0 0 0.5em 0;
+  width: 90%;
+  margin: 0 5%;
 }
 .compatibility-bar{
   width: 96%;
@@ -353,7 +358,7 @@ ul.estado-recuerdo li a span{
 }
 .interest-std{
   margin: 0;
-  padding: 1em 0.5em;
+  padding: 1em 5%;
 }
 .interest-std ul.estado-recuerdo li{
   width: 20%;

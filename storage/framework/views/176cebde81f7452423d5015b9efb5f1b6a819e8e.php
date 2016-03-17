@@ -3,46 +3,141 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-      
-    <p><strong><?php echo $buddy_data['buddy']->buddy_nickname; ?><br /></strong></p>
-    <div><?php echo $buddy_total_memories; ?> recuerdos</div>   
-      <ul>
-          <?php           
-          foreach($buddy_memories['memory'] as $key=>$value){ ?>
-            <li>
-                <a href="javascript:void(0);" class="buddy-memory-row"  id="buddy-memory-row_<?php echo $value->memory_id; ?>">
-                    <img src="<?php echo CC_JS_IMG; ?>images/memory_feeling/<?php echo $value->feeling; ?>" /><?php echo $value->title;?></a>
-                
-                <div class="buddy-memory-detail" id="buddy-memory-detail-<?php echo $value->memory_id; ?>" style="display: none">
-                    <p><?php echo $value->desc; ?></p>
+
+<!--PAGES PERSON MEMORIES-->
+  <section class="pages-section my-list">
+    <div class="section-full-border title-main-section">
+        <div class="content-section">
+          <a class="display-section" href="">
+            <div class="display-section-avatar">  
+              <svg class="avatar-femme" style="display:none;"><use xlink:href="#avatar-femenino" /></svg>  
+              <svg class="avatar-male"><use xlink:href="#avatar-masculino" /></svg> 
+            </div>
+            <div class="display-section-info">
+                <div class="display-section-name">
+                  <?php echo $buddy_data['buddy']->buddy_nickname; ?>
                 </div>
-             </li>
-          <?php } ?>                    
-      </ul>        
-      <div class="content-section">                           
-        <form name="new_person_form" id="new-person-form" action="" method="POST">
-        <fieldgroup>          
-            <div class="fieldinput">
-                <input type="text" name="person_nickname" id="person-nickname" maxlength="25" value="" placeholder="Cómo llamas a esta persona? *" data-rule-required="true" data-msg-required="Cómo le llamas a la persona que quieres agregar?." data-rule-maxlength="25" data-msg-maxlength="No puedes exceder los 15 caracteres" />
+                <div class="display-section-resume">
+                  <span><?php echo $buddy_data['buddy']->num_memories; ?> Recuerdos</span>
+                  <span><?php echo $buddy_data['buddy']->num_interest; ?> Inter&eacute;ses</span>
+                </div>
             </div>
-        </fieldgroup>    
-        <fieldgroup>          
-            <div class="fieldinput">                            
-                        
+            <div class="compatibility-item-result comp-positive" href="">
+              <svg class="comp-result-icon"><use xlink:href="#compatible" /></svg> 
+              <p><?php echo $buddy_data['buddy']->compatibility; ?>%</p> 
             </div>
-        </fieldgroup>    
-        <fieldgroup>          
-            <div class="fieldinput">                        
-                                                              
+          </a>
+        </div>
+      </div>
+   <?php if($buddy_total_memories){ 
+        
+          foreach($buddy_memories['memory'] as $key=>$value){       
+   ?>
+      <div class="section-full-border">
+        <div class="content-section">
+          <a class="display-section" href="javascript:void(0);">
+            <div class="display-section-avatar">  
+              <svg class="agradable"><use <?php echo 'xlink:href="#'.$value->feeling.'"'; ?> /></svg>               
             </div>
-        </fieldgroup>    
-        <div class="button-section">
-              <input type="submit" name="add_person_button" id="add-person-button" value="Adicionar Persona" />                    
-        </div>         
-       </form>   
-     </div>
-   
-   
+            <div class="display-section-info">
+                <div class="display-section-name">
+                  <?php echo $value->title; ?>
+                </div>
+                <div class="show-memory-resume">
+                  <p class="resume-descrip"><?php echo $value->desc; ?></p>
+                  <?php if(count($value->compatibility)){ ?>
+                  <ul class="resume-interest-list">
+                    <h4>Inter&eacute;ses en el recuerdo</h4>
+                    <?php foreach($value->compatibility as $interest=>$percentage) {
+                        $compatibility = ($percentage > 60)?'xlink:href="#compatible"':'xlink:href="#incompatible"';
+                    ?>
+                    <li>
+                      <svg class=""><use <?php echo $compatibility; ?> /></svg> 
+                      <p><?php echo $interest; ?></p>
+                    </li>
+                    <?php } ?>                    
+                  </ul>
+                  <?php } ?> 
+                </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <?php }//end foreach ?>      
+    <?php } ?>  
+  </section>
+  <a class="add-btn" id="link-add-person-memory" href="javascript:void(0);">
+    <svg class="icon-plus"><use xlink:href="#agregar" /></svg>
+    <p>Agregar Recuerdo</p>
+  </a>
+<!--///-->
+  <section class="action-box-wrap" id="new-person-memory-section" style="display: none">
+        <div class="action-box">
+          <div class="action-box-title">
+            Nueva Persona
+          </div> 
+          <div class="action-box-info">
+            <form>
+              <fieldgroup>
+                <div class="fieldinput">
+                  <input name="" type="text" value="T&iacute;tulo del Recuerdo:">
+                  <span class="character-counter">30 caract&eacute;res</span>
+                </div>
+                <div class="fieldinput">
+                  <textarea></textarea>
+                  <span class="character-counter">140 caract&eacute;res</span>
+                </div>
+                <div class="fieldinput pick-date">
+                  <label class="label-title">Agrega una fecha:</label>
+                  <a href=""><svg class="icon-plus"><use xlink:href="#calendario" /></svg></a>
+                </div>
+                <div class="fieldinput memory-std">
+                  <label class="label-title">Asignale un estado al recuerdo:</label>
+                  <ul class="estado-recuerdo">
+                    <li>
+                      <a href="">
+                        <svg class=""><use xlink:href="#great" /></svg>
+                        <span>me encanta</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <svg class=""><use xlink:href="#bad" /></svg>
+                        <span>No me gusta</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <svg class=""><use xlink:href="#sad" /></svg>
+                        <span>Triste</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <svg class=""><use xlink:href="#nice" /></svg>
+                        <span>me gusta</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <svg class=""><use xlink:href="#wow" /></svg>
+                        <span>Sorpresa</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <svg class=""><use xlink:href="#hate" /></svg>
+                        <span>Lo odio</span>
+                      </a>
+                    </li>
+                  </ul> 
+                </div>
+              </fieldgroup>
+              <input name="" type="submit" value="Crear Recuerdo">
+            </form>
+          </div> 
+        </div>  
+  </section>
 
 <?php $__env->stopSection(); ?>
 
