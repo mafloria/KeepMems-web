@@ -12,8 +12,7 @@
         <div class="content-section">
           <a class="display-section" href="">
             <div class="display-section-avatar">  
-              <svg class="avatar-femme" style="display:none;"><use xlink:href="#avatar-femenino" /></svg>  
-              <svg class="avatar-male"><use xlink:href="#avatar-masculino" /></svg> 
+              <svg class="avatar-<?php echo $buddy_data['buddy']->avatar; ?>" style="display:none;"><use  <?php echo 'xlink:href="#avatar-'.$buddy_data['buddy']->avatar.'"'; ?> /></svg>                
             </div>
             <div class="display-section-info">
                 <div class="display-section-name">
@@ -37,7 +36,7 @@
    ?>
       <div class="section-full-border">
         <div class="content-section">
-          <a class="display-section" href="javascript:void(0);">
+          <a class="display-section link-display-mem-resume" href="javascript:void(0);" id="link-display-mem-resume_<?php echo $value->memory_id; ?>">
             <div class="display-section-avatar">  
               <svg class="agradable"><use <?php echo 'xlink:href="#'.$value->feeling.'"'; ?> /></svg>               
             </div>
@@ -45,7 +44,7 @@
                 <div class="display-section-name">
                   <?php echo $value->title; ?>
                 </div>
-                <div class="show-memory-resume">
+                <div class="show-memory-resume" id="show-memory-resume_<?php echo $value->memory_id; ?>" style="display: none">
                   <p class="resume-descrip"><?php echo $value->desc; ?></p>
                   <?php if(count($value->compatibility)){ ?>
                   <ul class="resume-interest-list">
@@ -76,59 +75,59 @@
   <section class="action-box-wrap" id="new-person-memory-section" style="display: none">
         <div class="action-box">
           <div class="action-box-title">
-            Nueva Persona
+            Agrega un recuerdo con <?php echo $buddy_data['buddy']->buddy_nickname; ?>
           </div> 
           <div class="action-box-info">
             <form>
               <fieldgroup>
                 <div class="fieldinput">
-                  <input name="" type="text" value="T&iacute;tulo del Recuerdo:">
-                  <span class="character-counter">30 caract&eacute;res</span>
+                  <input name="memory_title" id="memory-title" type="text" value="" placeholder="T&iacute;tulo del Recuerdo">
+                  <span class="character-counter" id="memory-title-charcounter">30 caract&eacute;res</span>
                 </div>
                 <div class="fieldinput">
-                  <textarea></textarea>
-                  <span class="character-counter">140 caract&eacute;res</span>
+                  <textarea name="memory_desc" id="memory-desc" placeholder="Describe tu recuerdo" ></textarea>
+                  <span class="character-counter" id="memory-desc-charcounter">140 caract&eacute;res</span>
                 </div>
                 <div class="fieldinput pick-date">
                   <label class="label-title">Agrega una fecha:</label>
-                  <a href=""><svg class="icon-plus"><use xlink:href="#calendario" /></svg></a>
+                  <a href="javascript:void(0);"><svg class="icon-plus"><use xlink:href="#calendario" /></svg></a>
                 </div>
                 <div class="fieldinput memory-std">
                   <label class="label-title">Asignale un estado al recuerdo:</label>
                   <ul class="estado-recuerdo">
                     <li>
-                      <a href="">
-                        <svg class=""><use xlink:href="#great" /></svg>
+                      <a href="javascript:void(0);">
+                        <svg class="memory-feeling" id="feeling-great"><use xlink:href="#great" /></svg>
                         <span>me encanta</span>
                       </a>
                     </li>
                     <li>
-                      <a href="">
-                        <svg class=""><use xlink:href="#bad" /></svg>
+                      <a href="javascript:void(0);">
+                        <svg class="memory-feeling" id="feeling-bad"><use xlink:href="#bad" /></svg>
                         <span>No me gusta</span>
                       </a>
                     </li>
                     <li>
-                      <a href="">
-                        <svg class=""><use xlink:href="#sad" /></svg>
+                      <a href="javascript:void(0);">
+                        <svg class="memory-feeling" id="feeling-sad"><use xlink:href="#sad" /></svg>
                         <span>Triste</span>
                       </a>
                     </li>
                     <li>
-                      <a href="">
-                        <svg class=""><use xlink:href="#nice" /></svg>
+                      <a href="javascript:void(0);">
+                        <svg class="memory-feeling" id="feeling-nice"><use xlink:href="#nice" /></svg>
                         <span>me gusta</span>
                       </a>
                     </li>
                     <li>
-                      <a href="">
-                        <svg class=""><use xlink:href="#wow" /></svg>
+                      <a href="javascript:void(0);">
+                        <svg class="memory-feeling" id="feeling-wow"><use xlink:href="#wow" /></svg>
                         <span>Sorpresa</span>
                       </a>
                     </li>
                     <li>
-                      <a href="">
-                        <svg class=""><use xlink:href="#hate" /></svg>
+                      <a href="javascript:void(0);">
+                        <svg class="memory-feeling" id="feeling-hate"><use xlink:href="#hate" /></svg>
                         <span>Lo odio</span>
                       </a>
                     </li>

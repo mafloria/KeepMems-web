@@ -10,8 +10,7 @@
         <div class="content-section">
           <a class="display-section" href="">
             <div class="display-section-avatar">  
-              <svg class="avatar-femme" style="display:none;"><use xlink:href="#avatar-femenino" /></svg>  
-              <svg class="avatar-male"><use xlink:href="#avatar-masculino" /></svg> 
+              <svg class="avatar-<?php echo $buddy_data['buddy']->avatar; ?>" style="display:none;"><use  <?php echo 'xlink:href="#avatar-'.$buddy_data['buddy']->avatar.'"'; ?> /></svg>                
             </div>
             <div class="display-section-info">
                 <div class="display-section-name">
@@ -35,7 +34,7 @@
    ?>
       <div class="section-full-border">
         <div class="content-section">
-          <a class="display-section" href="javascript:void(0);">
+          <a class="display-section link-display-mem-resume" href="javascript:void(0);" id="link-display-mem-resume_<?php echo $value->memory_id; ?>">
             <div class="display-section-avatar">  
               <svg class="agradable"><use <?php echo 'xlink:href="#'.$value->feeling.'"'; ?> /></svg>               
             </div>
@@ -43,7 +42,7 @@
                 <div class="display-section-name">
                   <?php echo $value->title; ?>
                 </div>
-                <div class="show-memory-resume">
+                <div class="show-memory-resume" id="show-memory-resume_<?php echo $value->memory_id; ?>" style="display: none">
                   <p class="resume-descrip"><?php echo $value->desc; ?></p>
                   <?php if(count($value->compatibility)){ ?>
                   <ul class="resume-interest-list">
@@ -74,17 +73,17 @@
   <section class="action-box-wrap" id="new-person-memory-section" style="display: none">
         <div class="action-box">
           <div class="action-box-title">
-            Nueva Persona
+            Agrega un recuerdo con <?php echo $buddy_data['buddy']->buddy_nickname; ?>
           </div> 
           <div class="action-box-info">
             <form>
               <fieldgroup>
                 <div class="fieldinput">
-                  <input name="" type="text" value="T&iacute;tulo del Recuerdo:">
+                  <input name="" type="text" value="" placeholder="T&iacute;tulo del Recuerdo">
                   <span class="character-counter">30 caract&eacute;res</span>
                 </div>
                 <div class="fieldinput">
-                  <textarea></textarea>
+                  <textarea placeholder="Describe tu recuerdo" ></textarea>
                   <span class="character-counter">140 caract&eacute;res</span>
                 </div>
                 <div class="fieldinput pick-date">
