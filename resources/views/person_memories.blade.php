@@ -97,44 +97,44 @@
                   <ul class="estado-recuerdo">
                     <li>
                       <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="feeling-great"><use xlink:href="#great" /></svg>
+                        <svg class="memory-feeling" id="great"><use xlink:href="#great" /></svg>
                         <span>me encanta</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="feeling-bad"><use xlink:href="#bad" /></svg>
+                        <svg class="memory-feeling" id="bad"><use xlink:href="#bad" /></svg>
                         <span>No me gusta</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="feeling-sad"><use xlink:href="#sad" /></svg>
+                        <svg class="memory-feeling" id="sad"><use xlink:href="#sad" /></svg>
                         <span>Triste</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="feeling-nice"><use xlink:href="#nice" /></svg>
+                        <svg class="memory-feeling" id="nice"><use xlink:href="#nice" /></svg>
                         <span>me gusta</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="feeling-wow"><use xlink:href="#wow" /></svg>
+                        <svg class="memory-feeling" id="wow"><use xlink:href="#wow" /></svg>
                         <span>Sorpresa</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="feeling-hate"><use xlink:href="#hate" /></svg>
+                        <svg class="memory-feeling" id="hate"><use xlink:href="#hate" /></svg>
                         <span>Lo odio</span>
                       </a>
                     </li>
                   </ul> 
                 </div>
               </fieldgroup>
-              <input name="" type="submit" value="Crear Recuerdo">
+              <input name="create_memory" type="submit" value="Crear Recuerdo">
             </form>
           </div> 
         </div>  
