@@ -365,5 +365,10 @@ ul.estado-recuerdo li a span{
   margin-right: 0.5em;
 }
 
+/*RESPONSIVE*/
+@media screen and (min-width:0px) and (max-width:599px){
+ 
+}
+
 
 
