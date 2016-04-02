@@ -10,7 +10,7 @@
   <section class="pages-section my-list">
     <div class="section-full-border title-main-section">
         <div class="content-section">
-          <a class="display-section" href="">
+          <div class="display-section">
             <div class="display-section-avatar">  
               <svg class="avatar-<?php echo $buddy_data['buddy']->avatar; ?>" style="display:none;"><use  <?php echo 'xlink:href="#avatar-'.$buddy_data['buddy']->avatar.'"'; ?> /></svg>                
             </div>
@@ -23,11 +23,12 @@
                   <span><?php echo $buddy_data['buddy']->num_interest; ?> Inter&eacute;ses</span>
                 </div>
             </div>
-            <div class="compatibility-item-result comp-positive" href="">
+            <a class="compatibility-item-result comp-positive" href="">
               <svg class="comp-result-icon"><use xlink:href="#compatible" /></svg> 
-              <p><?php echo $buddy_data['buddy']->compatibility; ?>%</p> 
-            </div>
-          </a>
+              <p><?php echo $buddy_data['buddy']->compatibility; ?>%x</p>
+              <span>Ver Compatiblidad</span> 
+            </a>
+          </div>
         </div>
       </div>
    <?php if($buddy_total_memories){ 
@@ -78,15 +79,15 @@
             Agrega un recuerdo con <?php echo $buddy_data['buddy']->buddy_nickname; ?>
           </div> 
           <div class="action-box-info">
-            <form>
+            <form name="new_person_memory_form" id="new-person-memory-form" action="" method="POST">
               <fieldgroup>
                 <div class="fieldinput">
-                  <input name="memory_title" id="memory-title" type="text" value="" placeholder="T&iacute;tulo del Recuerdo">
-                  <span class="character-counter" id="memory-title-charcounter">30 caract&eacute;res</span>
+                  <input type="text" name="memory_title" id="memory-title" maxlength="30" value="" placeholder="T&iacute;tulo del Recuerdo" data-rule-required="true" data-msg-required="Dinos qué título le colocas al recuerdo?." data-rule-maxlength="30" data-msg-maxlength="No puedes exceder los 30 caracteres">
+                  <span class="character-counter" id="memory-title-charcounter">30 caracteres</span>
                 </div>
                 <div class="fieldinput">
-                  <textarea name="memory_desc" id="memory-desc" placeholder="Describe tu recuerdo" ></textarea>
-                  <span class="character-counter" id="memory-desc-charcounter">140 caract&eacute;res</span>
+                  <textarea name="memory_desc" id="memory-desc" placeholder="Describe tu recuerdo"  data-rule-required="true" data-msg-required="Describe tu recuerdo." data-rule-maxlength="140" data-msg-maxlength="No puedes exceder los 140 caracteres"></textarea>
+                  <span class="character-counter" id="memory-desc-charcounter">140 caracteres</span>
                 </div>
                 <div class="fieldinput pick-date">
                   <label class="label-title">Agrega una fecha:</label>

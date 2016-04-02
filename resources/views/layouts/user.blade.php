@@ -7,9 +7,10 @@
   <link rel="stylesheet" type="text/css" href="<?php echo CC_JS_IMG; ?>styles/styles.css">
   <link rel="stylesheet" type="text/css" href="<?php echo CC_JS_IMG; ?>styles/inside.css">
   <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
-  
+    
   <script src="<?php echo CC_JS_IMG; ?>js/jquery/jquery-1.12.1.min.js" type="text/javascript"></script>
-  <script src="<?php echo CC_JS_IMG; ?>js/jquery/validate/dist/jquery.validate.min.js" type="text/javascript"></script>          
+  <script src="<?php echo CC_JS_IMG; ?>js/jquery/validate/dist/jquery.validate.min.js" type="text/javascript"></script>
+  <script src="<?php echo CC_JS_IMG; ?>js/global.min.js" type="text/javascript"></script>          
   @yield('js')  
   
 </head>
@@ -203,16 +204,24 @@
     </div>
     <div class="top-nav">
       <div class="icon-nav">
-        <a href="javascript:void(0);">
+        <a href="javascript:void(0);" id="view-mainmenu">
           <svg class="icon-menu"><use xlink:href="#main-menu" /></svg>  
         </a>
+        <ul class="submenu" id="mainmenu-list" style="display: none">
+            <li>Cont&aacute;ctanos</li>
+            <li>T&eacute;rminos de uso</li>
+        </ul>
       </div>
       
       <div class="icon-nav">
-        <a href="javascript:void(0);">
+        <a href="javascript:void(0);" id="view-notifications">
           <svg class="icon-notificacion"><use xlink:href="#notificaciones" /></svg>  
         </a>
         <span class="notification-counter">00</span>
+        <ul class="submenu" id="notification-list" style="display: none">
+            <li>Ingresa mas memorias</li>
+            <li>Ingresa otra persona</li>
+        </ul>
       </div>
       <div class="icon-nav">
         <a href="<?php echo APPURL; ?>dashboard/<?php echo $session_id; ?>">
