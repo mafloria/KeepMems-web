@@ -1,4 +1,5 @@
 <?php $__env->startSection('js'); ?>
+<script src="<?php echo CC_JS_IMG; ?>js/global.min.js" type="text/javascript"></script>
 <script src="<?php echo CC_JS_IMG; ?>js/dashboard.min.js" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
 
@@ -71,7 +72,7 @@
                     </div>
                     <div class="fieldinput">                  
                       <input type="text" name="person_nickname" id="new-person-nickname" maxlength="30" value="" placeholder="Cómo deseas llamar a esta persona? *" data-rule-required="true" data-msg-required="Cómo le llamas a la persona que quieres agregar?." data-rule-maxlength="30" data-msg-maxlength="No puedes exceder los 30 caracteres" />
-                      <span class="character-counter">30 caract&eacute;res</span>
+                      <span class="character-counter" id="new-person-nickname-charcounter">30 caracteres</span>
                     </div>
                   </fieldgroup>
                   <input type="submit" name="add_person_button" id="add-person-button" value="Crear" />  
