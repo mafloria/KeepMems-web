@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keep Memories</title>  
   <link rel="stylesheet" type="text/css" href="<?php echo CC_JS_IMG; ?>styles/styles.css">
   <link rel="stylesheet" type="text/css" href="<?php echo CC_JS_IMG; ?>styles/inside.css">

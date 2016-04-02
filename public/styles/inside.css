@@ -77,11 +77,11 @@ a.add-btn{
   width: 96%;
   display: inline-block;
   padding: 2%;
-  background-color: #876ead;
+  background-color: #E02A46;
   color: white;
 }
 a.add-btn:hover{
-  background-color: #4F3871; 
+  background-color: #B91A33; 
 }
 a.add-btn svg{
   width: 40px;
@@ -124,14 +124,14 @@ form input[type="submit"]{
   padding: 3% 0;
   font-size: 1.2em;
   color: white;
-  background-color: #4f3871;
+  background-color: #E02A46;
   border: 0;
   font-family: 'PT Sans Narrow', sans-serif;
   margin-top: 0.5em;
 }
 .action-box-btn a:hover,
 form input[type="submit"]:hover{
-  background-color: #876ead;
+  background-color: #B91A33;
 }
 form select{
   width: 100%;
@@ -268,7 +268,7 @@ label.label-title{
 .pick-date svg{
   width: 36px;
   height: 33px;
-  fill: #4f3871;
+  fill: #E02A46;
 }
 ul.estado-recuerdo{
   width: 100%;
@@ -282,13 +282,14 @@ ul.estado-recuerdo li{
   text-align: center;
 }
 ul.estado-recuerdo li a svg{
-  width: 45px;
+  width: 100%;
   height: 52px;
-  fill: #4f3871;
+  fill: #E02A46;
 }
 ul.estado-recuerdo li a span{
   font-size: 0.8em;
   line-height: 0.8em;
+  color: #E02A46;
 }
 .memory-std{
   width: 90%;

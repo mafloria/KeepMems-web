@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keep Memories</title>
   <link rel="stylesheet" type="text/css" href="../styles/styles.css">
   <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
