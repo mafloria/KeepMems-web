@@ -57,5 +57,6 @@ Route::post('webservices/add-buddy/{session}', "WebServicesController@add_buddy"
 
 Route::get('dashboard/{session}', "UserInterfaceController@user_dashboard"); //pagina inicial del usuario logueado
 Route::get('person-memories/{session}/{person}', "UserInterfaceController@person_memories")->where('person', '[0-9]+'); //Recupera el dashboard de una presona
+Route::post('webservices/add-memory/{session}', "WebServicesController@add_memory"); //crea una memoria
  
 
