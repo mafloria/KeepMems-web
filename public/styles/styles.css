@@ -180,7 +180,8 @@ form fieldgroup{
   font-size: 1.3em;
 }
 .register-log-menu a:hover,
-.register-log-menu a:active{
+.register-log-menu a:active,
+.register-log-selected{
   background-color: #E02A46;
   color: white;
 }
