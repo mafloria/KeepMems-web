@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {       
+Route::get('/{confirm?}', "visitorInterfaceController@index");
+/*, function () {       
     return view('visitor');    
-});
+});*/
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,7 @@ define('WEBSERVICES','http://localhost:8000/'); //value for web services main ro
 define('CC_JS_IMG','http://localhost:8000/'); //value for css, js, and images includes
 
 Route::post('webservices/create-account', "WebServicesController@create_account"); //hace registro
+Route::post('webservices/send-validation-email', "WebServicesController@send_validation_email"); //hace registro
 Route::post('webservices/validate-token', "WebServicesController@validate_token"); //hace login
 
 Route::get('webservices/get-new-person-setup', "WebServicesController@get_new_person_setup");

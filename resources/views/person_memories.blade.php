@@ -31,8 +31,7 @@
           </div>
         </div>
       </div>
-   <?php if($buddy_total_memories){ 
-        
+   <?php if($buddy_total_memories){         
           foreach($buddy_memories['memory'] as $key=>$value){       
    ?>
       <div class="section-full-border">

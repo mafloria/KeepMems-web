@@ -24,7 +24,7 @@ class UserInterfaceController extends Controller
         $cliente = new WebServicesController;                
         $data['new_person_data'] = (array)json_decode($cliente->get_new_person_setup());
         $data['buddies_data'] = json_decode($cliente->get_buddies($session));
-
+                                            
         return view('user_home', $data); //user.dashboard                
     }
     

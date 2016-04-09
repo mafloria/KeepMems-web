@@ -14,36 +14,33 @@
     </div>
   </section>
   <section class="homeLog-section">
-          
-    <div id="signup-signin-messages"></div>
-    <div class="content-section" id="singin-div-form">       
+
+<?php /*LOGIN FORM */ ?>              
+    <div class="content-section" id="singin-div-form">
+       <div id="login-section-messages"></div>       
        <form name="mem_user_signin_form" id="mem-user-signin-form" action="" method="POST">
           <fieldgroup>          
             <div class="fieldinput">          
-              <input type="email" name="user_email" id="user-email" value="" placeholder="Correo Electr&oacute;nico" data-rule-required="true" data-rule-email="true" data-msg-required="Ingresa tu Correo Electr&oacute;nico." data-msg-email="Ingresa un Correo Electr&oacute;nico válido." />              
-            </div>
+              <input type="email" name="user_email" id="login-user-email" value="" placeholder="Correo Electr&oacute;nico" data-rule-required="true" data-rule-email="true" data-msg-required="Ingresa tu Correo Electr&oacute;nico." data-msg-email="Ingresa un Correo Electr&oacute;nico válido." />              
+            </div>            
             <div class="fieldinput">
               <input type="password" name="user_pswd" id="user-pswd" value="" placeholder="Contraseña" autocomplete="off" data-rule-required="true" data-msg-required="Ingresa tu contraseña." />
-            </div>        
+            </div>                    
           </fieldgroup>       
             <div class="button-section">
               <input type="submit" name="login_button" id="login-button" value="Ingresar" />
             </div>
        </form>
     </div>
-    
-    <div class="content-section" id="singup-div-form" style="display: none">
-       <form name="mem_user_signup_form" id="mem-user-signup-form" method="POST">
+
+<?php /* SIGNUP FIRST STEP FORM */ ?>
+<?php if(!isset($_GET['confirm'])){ ?>    
+    <div class="content-section" id="singup-div-form" style="display: none">       
+       <form name="mem_user_signup_form" id="mem-user-signup-step1-form" method="POST">
           <fieldgroup>          
             <div class="fieldinput">          
-              <input type="email" name="user_email" id="user-email" placeholder="Correo Electr&oacute;nico" data-rule-required="true" data-rule-email="true" data-msg-required="Ingresa tu Correo Electr&oacute;nico." data-msg-email="Ingresa un Correo Electr&oacute;nico válido." />              
-            </div>
-            <div class="fieldinput">
-              <input type="password" name="user_pswd" id="signup-user-pswd" placeholder="Contraseña" autocomplete="off" data-rule-required="true" data-msg-required="Ingresa una Contraseña." />
-            </div>
-            <div class="fieldinput">
-              <input type="password" name="user_pswd_confirm" id="user-pswd-confirm" placeholder="Confirma tu Contraseña" autocomplete="off" data-rule-required="true" data-msg-required="Confirma tu contraseña." data-rule-equalto="#signup-user-pswd" data-msg-equalto="La contrase&ntilde;a no coincide." />              
-            </div>
+              <input type="email" name="user_email" id="signup-user-email" placeholder="Correo Electr&oacute;nico" data-rule-required="true" data-rule-email="true" data-msg-required="Ingresa tu Correo Electr&oacute;nico." data-msg-email="Ingresa un Correo Electr&oacute;nico válido." />              
+            </div>            
           </fieldgroup> 
           <fieldgroup>
             <div class="facebook-log center">
@@ -58,6 +55,48 @@
               <input type="submit" name="signup_button" id="signup-button" value="Registrarme" />
             </div>
       </form>
-  </div>
+      <div id="after-registration-message">
+         
+      </div>
+   </div>
+<?php } ?>
+
+<?php /* SIGNUP SECOND STEP FORM */ ?>
+ <?php if(isset($_GET['confirm']) && !empty($_GET['confirm'])){ ?>   
+   <div class="content-section" id="singup-div-form" style="display: none">
+       <div id="signup-messages"></div>       
+       <form name="mem_user_signup_form" id="mem-user-signup-form" method="POST">
+          <fieldgroup>          
+            <div class="fieldinput">          
+              <input type="email" name="user_email" id="signup-user-email" placeholder="Correo Electr&oacute;nico" data-rule-required="true" data-rule-email="true" data-msg-required="Ingresa tu Correo Electr&oacute;nico." data-msg-email="Ingresa un Correo Electr&oacute;nico válido." />              
+            </div>            
+            <div class="fieldinput">
+              <input type="password" name="user_pswd" id="signup-user-pswd" placeholder="Contraseña" autocomplete="off" data-rule-required="true" data-msg-required="Ingresa una Contraseña." />
+            </div>
+            <div class="fieldinput">
+              <input type="password" name="user_pswd_confirm" id="user-pswd-confirm" placeholder="Confirma tu Contraseña" autocomplete="off" data-rule-required="true" data-msg-required="Confirma tu contraseña." data-rule-equalto="#signup-user-pswd" data-msg-equalto="La contrase&ntilde;a no coincide." />              
+            </div>            
+          </fieldgroup> 
+          <fieldgroup>
+            <div class="facebook-log center">
+                <a href="">Registrate con facebook</a>
+                <p>No te preocupes, nosotros no utilizaremos, ni compartiremos informaci&oacute;n en tu muro de Facebook.</p>
+            </div>
+            <div class="agreement">
+                <a href="javascript:void(0);"><svg class="icon-check"><use xlink:href="#check" /></svg>Estoy deacuerdo con los t&eacute;rminos de uso y pol&iacute;ticas de privacidad.</a>
+            </div>
+          </fieldgroup>
+            <div class="button-section">
+              <input type="submit" name="signup_button" id="signup-button" value="Registrarme" />
+            </div>
+      </form>
+      <div id="after-registration-message">
+         
+      </div>
+   </div>
+ <?php } ?>   
+     
+
+     
   </section>  
 @endsection

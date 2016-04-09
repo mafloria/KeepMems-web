@@ -206,7 +206,7 @@
       <div class="icon-nav">
         <a href="javascript:void(0);" id="view-mainmenu">
           <svg class="icon-menu"><use xlink:href="#main-menu" /></svg>  
-        </a>
+        </a> 
         <ul class="submenu" id="mainmenu-list" style="display: none">
             <li>Cont&aacute;ctanos</li>
             <li>T&eacute;rminos de uso</li>
