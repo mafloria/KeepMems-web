@@ -9,14 +9,14 @@
       Un espacio donde podr&aacute;s crear recuerdos e inter&eacute;ses que tengas en comun con cualquier persona de forma gratis y privada.
     </p>
     <div class="register-log-menu">
-      <a href="javascript:void(0);" id="signup-link">Crea una cuenta</a>
-      <a href="javascript:void(0);" class="active" id="signin-link">Ingresa</a>
+      <a href="javascript:void(0);" <?php if(!$first_display_login) { ?>class="active"<?php } ?> id="signup-link">Crea una cuenta</a>
+      <a href="javascript:void(0);" <?php if($first_display_login) { ?>class="active"<?php } ?> id="signin-link">Ingresa</a>
     </div>
   </section>
   <section class="homeLog-section">
 
 <?php /*LOGIN FORM */ ?>              
-    <div class="content-section" id="singin-div-form">
+    <div class="content-section" id="singin-div-form" <?php if(!$first_display_login) { ?>style="display: none"<?php } ?>>
        <div id="login-section-messages"></div>       
        <form name="mem_user_signin_form" id="mem-user-signin-form" action="" method="POST">
           <fieldgroup>          
@@ -34,8 +34,10 @@
     </div>
 
 <?php /* SIGNUP FIRST STEP FORM */ ?>
-<?php if(!isset($_GET['confirm'])){ ?>    
-    <div class="content-section" id="singup-div-form" style="display: none">       
+
+<?php if($validate_email){ ?>    
+    <div class="content-section" id="singup-div-form" <?php if($first_display_login) { ?>style="display: none"<?php } ?>>
+       <div id="signup-messages"><?php echo $message_to_user; ?></div>       
        <form name="mem_user_signup_form" id="mem-user-signup-step1-form" method="POST">
           <fieldgroup>          
             <div class="fieldinput">          
@@ -59,12 +61,9 @@
          
       </div>
    </div>
-<?php } ?>
-
-<?php /* SIGNUP SECOND STEP FORM */ ?>
- <?php if(isset($_GET['confirm']) && !empty($_GET['confirm'])){ ?>   
-   <div class="content-section" id="singup-div-form" style="display: none">
-       <div id="signup-messages"></div>       
+<?php }else{ /*email validated - then allow signup */ ?>   
+   <div class="content-section" id="singup-div-form">
+       <div id="signup-messages"><?php echo $message_to_user; ?></div>       
        <form name="mem_user_signup_form" id="mem-user-signup-form" method="POST">
           <fieldgroup>          
             <div class="fieldinput">          
