@@ -17,7 +17,7 @@ class VisitorInterfaceController extends Controller
     public function index($confirm="")
     {        
         $data = array();        
-        if(isset($confirm) && !empty($_GET['confirm']){
+        if(isset($confirm) && !empty($_GET['confirm'])){
                 
         }
         
