@@ -29,17 +29,21 @@
                       <span><?php echo $value->num_interest; ?> Inter&eacute;ses</span>
                     </div>
                 </div>
-                <?php if($value->compatibility){ ?>
-                <div class="compatibility-item-result comp-positive" href="javascript:void(0);">
-                  <svg class="comp-result-icon"><use xlink:href="#compatible" /></svg> 
-                  <p><?php echo $value->compatibility; ?>%</p> 
-                </div>
-                <?php }else{ ?>
-                <div class="compatibility-item-result comp-non" href="javascript:void(0);">
-                  <span>Ingresa algunos inter&eacute;ses para ver<br /> la compatibilidad con esta persona</span> 
-                </div>
-                <?php } ?>
+                
               </a>
+              <?php if($value->compatibility){ ?>
+                <a class="compatibility-item-result comp-positive" href="javascript:void(0);">
+                  <div class="compatibility-item-result-wrap">
+                    <svg class="comp-result-icon"><use xlink:href="#compatible" /></svg> 
+                    <p><?php echo $value->compatibility; ?>%</p>
+                  </div>
+                  <span>ver compatibilidad</span> 
+                </a>
+                <?php }else{ ?>
+                <a class="compatibility-item-result comp-non" href="javascript:void(0);">
+                  <span>Ingresa algunos inter&eacute;ses para ver<br /> la compatibilidad con esta persona</span> 
+                </a>
+                <?php } ?>
             </div>
           </div>
          
