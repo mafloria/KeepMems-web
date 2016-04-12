@@ -41,7 +41,7 @@
                 </a>
                 <?php }else{ ?>
                 <a class="compatibility-item-result comp-non" href="javascript:void(0);">
-                  <span>Ingresa algunos inter&eacute;ses para ver<br /> la compatibilidad con esta persona</span> 
+                  <span>Ingresa algunos inter&eacute;ses para ver la compatibilidad con esta persona</span> 
                 </a>
                 <?php } ?>
             </div>

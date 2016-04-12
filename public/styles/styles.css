@@ -257,12 +257,22 @@ label.error{
 }
 .agreement:hover,
 .agreement a:hover{
-  color: #d6c7ec;
-  
+  color: #d6c7ec;  
+}
+#after-registration-message{
+  color: white;
+  width: 86%;
+  margin: 0 auto;
+  padding: 2%;
+  background-color: #9981BD;
+  font-size: 1.2em;
+  border-radius: 0.2em;
 }
 /*RESPONSIVE*/
-@media screen and (min-width:0px) and (max-width:599px){
- 
+@media (min-width: 600px){
+ body{
+  background-color: #F8F3FF;
+ }
 }
 
 
