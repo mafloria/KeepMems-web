@@ -1,0 +1,17 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|lib|stylesheet|images|captcha|source|ckeditor|js|css|documents|robots\.txt\.*)
+RewriteRule ^(.*)$ /KeepMems-web/public/index.php/$1 [L]
+
+<IfModule mod_expires.c>
+# Enable expirations
+ExpiresActive On
+
+# Default directive
+ExpiresDefault "access plus 1 day"
+</IfModule>
+
+# BEGIN GZIP
+<ifmodule mod_deflate.c>
+    #AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</ifmodule>
+# END GZIP
