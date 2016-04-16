@@ -4,6 +4,7 @@ header{
   width: 96%;
   background-color: #4f3871;
   display: inherit;
+  position: relative;
 }
 a.btn-block{
   padding: 0.2em 0.5em;
@@ -31,6 +32,7 @@ a.btn-block{
   float: right;
   width: auto;
   position: relative;
+  margin-left: 2em;
 }
 .icon-nav a{
   width: 100%;
@@ -38,7 +40,6 @@ a.btn-block{
 }
 .icon-nav a svg{
   fill: #876ead;
-  margin-left: 2em;
 }
 .icon-nav a svg:hover{
   fill: white;
@@ -298,19 +299,19 @@ ul.estado-recuerdo{
   margin: 0.5em 0;
 }
 ul.estado-recuerdo li{
-  width: 14%;
+  width: 12%;
   float: left;
-  margin: 0 1%;
+  margin: 0 2.3%;
   text-align: center;
 }
 ul.estado-recuerdo li a svg{
   width: 100%;
-  height: 52px;
+  height: 38px;
   fill: #E02A46;
 }
 ul.estado-recuerdo li a span{
   font-size: 0.8em;
-  line-height: 0.8em;
+  line-height: inherit;
   color: #E02A46;
 }
 .memory-std{
@@ -388,6 +389,7 @@ ul.estado-recuerdo li a span{
   margin-right: 0.5em;
 }
 
+
 /*RESPONSIVE*/
 @media screen and (min-width:0px) and (max-width:599px){
  
@@ -409,6 +411,15 @@ ul.estado-recuerdo li a span{
     margin: 0 auto;
     display: block;
   }
+  .compatibility-item-result{
+    width: 12%;
+  }
 }
+@media screen and (min-width:0px) and (max-width:374px){
+  .compatibility-item-result span{
+    font-size: 0.6em;
+  }
+}
+
 
 

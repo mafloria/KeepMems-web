@@ -218,10 +218,7 @@
           <svg class="icon-notificacion"><use xlink:href="#notificaciones" /></svg>  
         </a>
         <span class="notification-counter">00</span>
-        <ul class="submenu" id="notification-list" style="display: none">
-            <li>Ingresa mas memorias</li>
-            <li>Ingresa otra persona</li>
-        </ul>
+        
       </div>
       <div class="icon-nav">
         <a href="<?php echo APPURL; ?>dashboard/<?php echo $session_id; ?>">
@@ -229,6 +226,10 @@
         </a>
       </div>
     </div>
+    <ul class="submenu" id="notification-list">
+      <li><a href="">Ingresa mas memorias</a></li>
+      <li><a href="">Ingresa otra persona</a></li>
+    </ul>
   </header>
   <div id="wrapper">
          @yield('content')

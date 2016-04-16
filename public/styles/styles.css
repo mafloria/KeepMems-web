@@ -268,10 +268,49 @@ label.error{
   font-size: 1.2em;
   border-radius: 0.2em;
 }
+/*submenu*/
+ul.submenu{
+  position: absolute;
+  background-color: white;
+  width: 60%;
+  top: 3.6em;
+  right: 0;
+  z-index: 2;
+  border: 1px solid #4f3871;
+}
+ul.submenu li{
+  width: 100%;
+  display: inline-block;
+}
+ul.submenu li a{
+  text-align: right;
+  width: 94%;
+  padding: 3%;
+  display: block;
+}
+ul.submenu li a:hover{
+ background-color: #4f3871;
+ color: white; 
+}
 /*RESPONSIVE*/
 @media (min-width: 600px){
  body{
   background-color: #F8F3FF;
+ }
+ section.intro-section,
+ form#mem-user-signin-form{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+ }
+ .homeLog-section .button-section{
+  width: 90%;
+  margin: 0 auto;
+ }
+ ul.submenu{
+  width: 40%;
+  top: 4.4em;
  }
 }
 
