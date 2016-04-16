@@ -206,27 +206,28 @@
       <div class="icon-nav">
         <a href="javascript:void(0);" id="view-mainmenu">
           <svg class="icon-menu"><use xlink:href="#main-menu" /></svg>  
-        </a> 
-        <ul class="submenu" id="mainmenu-list" style="display: none">
-            <li>Cont&aacute;ctanos</li>
-            <li>T&eacute;rminos de uso</li>
-        </ul>
+        </a>         
       </div>
       
       <div class="icon-nav">
         <a href="javascript:void(0);" id="view-notifications">
           <svg class="icon-notificacion"><use xlink:href="#notificaciones" /></svg>  
         </a>
-        <span class="notification-counter">00</span>
-        
+        <span class="notification-counter">00</span>        
       </div>
+      
       <div class="icon-nav">
         <a href="<?php echo APPURL; ?>dashboard/<?php echo $session_id; ?>">
           <svg class="icon-list-people"><use xlink:href="#lista-personas" /></svg>  
         </a>
       </div>
     </div>
-    <ul class="submenu" id="notification-list">
+    <!-- main navigation sub menus -->    
+    <ul class="submenu" id="mainmenu-list" style="display: none">
+        <li><a href="/">Cont&aacute;ctanos</a></li>
+        <li><a href="/">T&eacute;rminos de uso</a></li>
+    </ul>
+    <ul class="submenu" id="notification-list" style="display: none">
       <li><a href="">Ingresa mas memorias</a></li>
       <li><a href="">Ingresa otra persona</a></li>
     </ul>

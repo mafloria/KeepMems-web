@@ -2,6 +2,10 @@
 
 @section('js')
 <script src="<?php echo CC_JS_IMG; ?>js/person_memories.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="<?php echo CC_JS_IMG; ?>styles/jquery/jquery-ui-1.10.4.custom.min.css">
+<script src="<?php echo CC_JS_IMG; ?>js/jquery/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+<script src="<?php echo CC_JS_IMG;?>js/calendar-i18n/jquery.ui.datepicker-es.js" type="text/javascript"></script>
+
 @endsection
 
 @section('content')
@@ -65,20 +69,21 @@
         </div>
       </div>
       <?php }//end foreach ?>      
-    <?php } ?>  
+    <?php } ?>    
+    <a class="add-btn" id="link-add-person-memory" href="javascript:void(0);">
+      <svg class="icon-plus"><use xlink:href="#agregar" /></svg>
+      <p>Agregar Recuerdo</p>
+    </a>
   </section>
-  <a class="add-btn" id="link-add-person-memory" href="javascript:void(0);">
-    <svg class="icon-plus"><use xlink:href="#agregar" /></svg>
-    <p>Agregar Recuerdo</p>
-  </a>
 <!--///-->
-  <section class="action-box-wrap" id="new-person-memory-section" style="display: none">
+  <section class="pages-section action-box-wrap" id="new-person-memory-section" style="display: none">
         <div class="action-box">
           <div class="action-box-title">
             Agrega un recuerdo con <?php echo $buddy_data['buddy']->buddy_nickname; ?>
           </div> 
           <div class="action-box-info">
             <form name="new_person_memory_form" id="new-person-memory-form" action="" method="POST">
+              <input type="hidden" name="memory_feeling" id="hidden-memory-feeling" value="" data-rule-required="true" data-msg-required="Asignale un estado al recuerdo." />
               <fieldgroup>
                 <div class="fieldinput">
                   <input type="text" name="memory_title" id="memory-title" maxlength="30" value="" placeholder="T&iacute;tulo del Recuerdo" data-rule-required="true" data-msg-required="Dinos qué título le colocas al recuerdo?." data-rule-maxlength="30" data-msg-maxlength="No puedes exceder los 30 caracteres">
@@ -89,49 +94,53 @@
                   <span class="character-counter" id="memory-desc-charcounter">140 caracteres</span>
                 </div>
                 <div class="fieldinput pick-date">
-                  <label class="label-title">Agrega una fecha:</label>
-                  <a href="javascript:void(0);"><svg class="icon-plus"><use xlink:href="#calendario" /></svg></a>
+                    <!-- <svg class="icon-plus"><use xlink:href="#calendario" /></svg> -->
+                  <label class="label-title">Agrega una fecha:</label>                                                                      
+                    <input type="image" name="image_picker" id="datepicker" class="icon-plus" src="../../images/calendario.svg" /> <!--  -->
+                    <div id="memory-date-display"></div>                        
+                  </label>                   
+                  <input type="hidden" name="memory_date" id="memory-date" value="" data-rule-required="true" data-msg-required="De qué fecha es el recuerdo." />
                 </div>
                 <div class="fieldinput memory-std">
-                  <label class="label-title">Asignale un estado al recuerdo:</label>
+                  <label for="mamery-felling" class="label-memory-feeling label-title">Asignale un estado al recuerdo:</label>
                   <ul class="estado-recuerdo">
-                    <li>
-                      <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="great"><use xlink:href="#great" /></svg>
+                    <li>                       
+                      <a href="javascript:void(0);" class="memory-feeling" id="great">
+                        <svg><use xlink:href="#great" /></svg>
                         <span>me encanta</span>
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="bad"><use xlink:href="#bad" /></svg>
+                      <a href="javascript:void(0);" class="memory-feeling" id="bad">
+                        <svg><use xlink:href="#bad" /></svg>
                         <span>No me gusta</span>
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="sad"><use xlink:href="#sad" /></svg>
+                      <a href="javascript:void(0);" class="memory-feeling" id="sad">
+                        <svg><use xlink:href="#sad" /></svg>
                         <span>Triste</span>
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="nice"><use xlink:href="#nice" /></svg>
+                      <a href="javascript:void(0);" class="memory-feeling" id="nice">
+                        <svg><use xlink:href="#nice" /></svg>
                         <span>me gusta</span>
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="wow"><use xlink:href="#wow" /></svg>
+                      <a href="javascript:void(0);" class="memory-feeling" id="wow">
+                        <svg><use xlink:href="#wow" /></svg>
                         <span>Sorpresa</span>
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);">
-                        <svg class="memory-feeling" id="hate"><use xlink:href="#hate" /></svg>
+                      <a href="javascript:void(0);" class="memory-feeling" id="hate">
+                        <svg><use xlink:href="#hate" /></svg>
                         <span>Lo odio</span>
                       </a>
                     </li>
-                  </ul> 
+                  </ul>
                 </div>
               </fieldgroup>
               <input name="create_memory" type="submit" value="Crear Recuerdo">
